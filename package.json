@@ -1,0 +1,9 @@
+{
+  "name": "leperle-artists-realism",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Лендинг-онбординг художників Le'Perle (реалізм + high-detail) с приёмом заявок в Notion",
+  "dependencies": {
+    "busboy": "^1.6.0"
+  }
+}
