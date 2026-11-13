@@ -379,14 +379,10 @@
             </div>
           </fieldset>
 
-          <fieldset class="field field--choice" id="q-materials">
-            <legend>Чи маєте матеріали для розпису? <span>*</span></legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="materials" value="Так, все є" required /><span>Так, все є</span></label>
-              <label class="chip"><input type="radio" name="materials" value="Частково" /><span>Частково</span></label>
-              <label class="chip"><input type="radio" name="materials" value="Ні" /><span>Ні</span></label>
-            </div>
-          </fieldset>
+          <div class="field">
+            <label for="materials">Чи маєте матеріали для розпису? <span>*</span></label>
+            <input id="materials" name="materials" type="text" required placeholder="Фарби, пензлі, ґрунт, лак — що з цього є" />
+          </div>
 
           <fieldset class="field field--choice" id="q-freezer">
             <legend>Чи маєте фрезер для шліфування? <span>*</span></legend>
@@ -404,14 +400,10 @@
             </div>
           </fieldset>
 
-          <fieldset class="field field--choice" id="q-start">
-            <legend>Коли готові почати? <span>*</span></legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="start" value="Вже зараз" required /><span>Вже зараз</span></label>
-              <label class="chip"><input type="radio" name="start" value="Протягом тижня" /><span>Протягом тижня</span></label>
-              <label class="chip"><input type="radio" name="start" value="Пізніше" /><span>Пізніше</span></label>
-            </div>
-          </fieldset>
+          <div class="field">
+            <label for="start">Коли готові почати? <span>*</span></label>
+            <input id="start" name="start" type="text" required placeholder="Напишіть вашу відповідь" />
+          </div>
 
           <div class="field">
             <label>Надайте, будь ласка, приклади ваших робіт <em>(до 15 фото)</em> <span>*</span></label>
