@@ -124,6 +124,13 @@
   /* ---- Submit ---- */
   var form = document.getElementById("applyForm");
 
+  form.addEventListener("change", function (e) {
+    if (e.target.type === "radio") {
+      var grp = e.target.closest(".field--choice");
+      if (grp) grp.classList.remove("is-error");
+    }
+  });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -140,21 +147,28 @@
       ["age", "Вкажіть ваш вік."],
       ["city", "Напишіть, з якого ви міста."],
       ["experience", "Опишіть ваш досвід розпису."],
-      ["style", "Вкажіть, який стиль розпису вам ближче."],
-      ["perday", "Напишіть, скільки фігурок на день готові робити."],
-      ["hours", "Напишіть, скільки годин на день готові приділяти."],
-      ["materials", "Напишіть, чи маєте матеріали для розпису."],
-      ["freezer", "Напишіть, чи маєте фрезер."],
+      ["style", "Оберіть, який стиль розпису вам ближче."],
+      ["perday", "Оберіть, скільки фігурок на день готові робити."],
+      ["hours", "Оберіть, скільки годин на день готові приділяти."],
+      ["materials", "Оберіть, чи маєте матеріали для розпису."],
+      ["freezer", "Оберіть, чи маєте фрезер."],
       ["test", "Дайте відповідь щодо тестового завдання."],
-      ["start", "Напишіть, коли готові почати."],
+      ["start", "Оберіть, коли готові почати."],
       ["comment", "Заповніть, будь ласка, коментар."]
     ];
     for (var i = 0; i < requiredFields.length; i++) {
-      var fld = form[requiredFields[i][0]];
+      var fld = form.elements[requiredFields[i][0]];
       if (!fld.value.trim()) {
         setStatus(requiredFields[i][1], "error");
-        fld.focus();
-        fld.scrollIntoView({ behavior: "smooth", block: "center" });
+        var isGroup = !fld.focus; // RadioNodeList (кнопки вибору)
+        var target = isGroup ? document.getElementById("q-" + requiredFields[i][0]) : fld;
+        if (isGroup) {
+          target.classList.add("is-error");
+          fld[0].focus({ preventScroll: true });
+        } else {
+          fld.focus();
+        }
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
     }
@@ -177,13 +191,13 @@
     fd.append("city", form.city.value.trim());
     fd.append("links", form.links.value.trim());
     fd.append("experience", form.experience.value);
-    fd.append("style", form.style.value);
-    fd.append("perday", form.perday.value);
-    fd.append("hours", form.hours.value);
-    fd.append("materials", form.materials.value);
-    fd.append("freezer", form.freezer.value);
-    fd.append("test", form.test.value);
-    fd.append("start", form.start.value);
+    fd.append("style", form.elements["style"].value);
+    fd.append("perday", form.elements["perday"].value);
+    fd.append("hours", form.elements["hours"].value);
+    fd.append("materials", form.elements["materials"].value);
+    fd.append("freezer", form.elements["freezer"].value);
+    fd.append("test", form.elements["test"].value);
+    fd.append("start", form.elements["start"].value);
     fd.append("comment", form.comment.value.trim());
     fd.append("ack", form.ack.checked ? "yes" : "");
 

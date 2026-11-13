@@ -350,40 +350,68 @@
             <textarea id="experience" name="experience" rows="4" required placeholder="Що саме розписували, як довго, з якими матеріалами працювали"></textarea>
           </div>
 
-          <div class="field">
-            <label for="style">Який стиль розпису вам ближче? <span>*</span></label>
-            <input id="style" name="style" type="text" required placeholder="High-Detail, Реалізм або обидва" />
-          </div>
+          <fieldset class="field field--choice" id="q-style">
+            <legend>Який стиль розпису вам ближче? <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="style" value="High-Detail" required /><span>High-Detail</span></label>
+              <label class="chip"><input type="radio" name="style" value="Реалізм" /><span>Реалізм</span></label>
+              <label class="chip"><input type="radio" name="style" value="Обидва" /><span>Обидва</span></label>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="perday">Скільки фігурок на день готові робити? <span>*</span></label>
-            <input id="perday" name="perday" type="text" required placeholder="Напишіть вашу відповідь" />
-          </div>
+          <fieldset class="field field--choice" id="q-perday">
+            <legend>Скільки фігурок на день готові робити? <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="perday" value="1" required /><span>1</span></label>
+              <label class="chip"><input type="radio" name="perday" value="2" /><span>2</span></label>
+              <label class="chip"><input type="radio" name="perday" value="3" /><span>3</span></label>
+              <label class="chip"><input type="radio" name="perday" value="4+" /><span>4+</span></label>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="hours">Скільки годин на день готові приділяти роботі? <span>*</span></label>
-            <input id="hours" name="hours" type="text" required placeholder="Напишіть вашу відповідь" />
-          </div>
+          <fieldset class="field field--choice" id="q-hours">
+            <legend>Скільки годин на день готові приділяти роботі? <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="hours" value="до 4 год" required /><span>до 4 год</span></label>
+              <label class="chip"><input type="radio" name="hours" value="4–6 год" /><span>4–6 год</span></label>
+              <label class="chip"><input type="radio" name="hours" value="6–8 год" /><span>6–8 год</span></label>
+              <label class="chip"><input type="radio" name="hours" value="8+ год" /><span>8+ год</span></label>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="materials">Чи маєте матеріали для розпису? <span>*</span></label>
-            <input id="materials" name="materials" type="text" required placeholder="Фарби, пензлі, ґрунт, лак — що з цього є" />
-          </div>
+          <fieldset class="field field--choice" id="q-materials">
+            <legend>Чи маєте матеріали для розпису? <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="materials" value="Так, все є" required /><span>Так, все є</span></label>
+              <label class="chip"><input type="radio" name="materials" value="Частково" /><span>Частково</span></label>
+              <label class="chip"><input type="radio" name="materials" value="Ні" /><span>Ні</span></label>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="freezer">Чи маєте фрезер для шліфування? <span>*</span></label>
-            <input id="freezer" name="freezer" type="text" required placeholder="Напишіть вашу відповідь" />
-          </div>
+          <fieldset class="field field--choice" id="q-freezer">
+            <legend>Чи маєте фрезер для шліфування? <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="freezer" value="Так" required /><span>Так</span></label>
+              <label class="chip"><input type="radio" name="freezer" value="Ні" /><span>Ні</span></label>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="test">Чи готові виконати тестове завдання? <em>(воно оплачується — 200 грн)</em> <span>*</span></label>
-            <input id="test" name="test" type="text" required placeholder="Напишіть вашу відповідь" />
-          </div>
+          <fieldset class="field field--choice" id="q-test">
+            <legend>Чи готові виконати тестове завдання? <em>(воно оплачується — 200 грн)</em> <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="test" value="Так" required /><span>Так</span></label>
+              <label class="chip"><input type="radio" name="test" value="Ні" /><span>Ні</span></label>
+            </div>
+          </fieldset>
 
-          <div class="field">
-            <label for="start">Коли готові почати? <span>*</span></label>
-            <input id="start" name="start" type="text" required placeholder="Напишіть вашу відповідь" />
-          </div>
+          <fieldset class="field field--choice" id="q-start">
+            <legend>Коли готові почати? <span>*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="start" value="Вже зараз" required /><span>Вже зараз</span></label>
+              <label class="chip"><input type="radio" name="start" value="Протягом тижня" /><span>Протягом тижня</span></label>
+              <label class="chip"><input type="radio" name="start" value="Пізніше" /><span>Пізніше</span></label>
+            </div>
+          </fieldset>
 
           <div class="field">
             <label>Надайте, будь ласка, приклади ваших робіт <em>(до 15 фото)</em> <span>*</span></label>

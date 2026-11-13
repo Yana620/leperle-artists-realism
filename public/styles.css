@@ -336,6 +336,26 @@ a { color: inherit; text-decoration: none; }
   outline: none; border-color: var(--rose); box-shadow: 0 0 0 4px rgba(229,156,184,.35);
 }
 
+/* choice chips (Так / Ні та інші варіанти) */
+fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
+.field legend { font-size: .88rem; color: rgba(255,255,255,.92); font-weight: 500; padding: 0; margin-bottom: .45rem; }
+.field legend span { color: var(--rose); }
+.field legend em { color: rgba(255,255,255,.6); font-style: italic; font-weight: 400; }
+.chips { display: flex; flex-wrap: wrap; gap: .55rem; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.chip span {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 4.5rem;
+  padding: .75rem 1.25rem; border-radius: 999px; font-size: .98rem;
+  background: rgba(255,255,255,.1); color: var(--white, #fff); border: 1.5px solid rgba(255,255,255,.35);
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+}
+.chip:hover span { border-color: var(--rose); background: rgba(255,255,255,.16); }
+.chip input:checked + span { background: var(--rose); border-color: var(--rose); color: var(--ink); font-weight: 600; }
+.chip input:focus-visible + span { box-shadow: 0 0 0 4px rgba(229,156,184,.35); }
+.chip:active span { transform: scale(.97); }
+.field--choice.is-error .chip span { border-color: #ff9eb5; background: rgba(255,120,150,.12); }
+
 /* dropzone */
 .dropzone {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .4rem;
